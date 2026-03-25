@@ -1,7 +1,0 @@
-{
-  "mappings": [
-    "/content/queensland-aemcoder-demo/:/",
-    "/content/queensland-aemcoder-demo/metadata:/metadata.json",
-    "/content/queensland-aemcoder-demo/configuration:/.helix/config.json"
-  ]
-}
