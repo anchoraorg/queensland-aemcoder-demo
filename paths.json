@@ -1,7 +1,7 @@
 {
   "mappings": [
-    "/content/aem-block-collection/:/",
-    "/content/aem-block-collection/metadata:/metadata.json",
-    "/content/aem-block-collection/configuration:/.helix/config.json"
+    "/content/queensland-aemcoder-demo/:/",
+    "/content/queensland-aemcoder-demo/metadata:/metadata.json",
+    "/content/queensland-aemcoder-demo/configuration:/.helix/config.json"
   ]
 }
