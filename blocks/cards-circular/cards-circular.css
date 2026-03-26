@@ -1,33 +1,32 @@
-/* Cards Circular — Queensland-styled circular image buttons */
+/* Cards Circular — Queensland rectangular image cards with overlay text */
 
 .cards-circular > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 .cards-circular > ul > li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 140px;
-  border: none;
-  background: transparent;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
   cursor: pointer;
 }
 
-/* Circular image container */
+/* Make the entire card clickable via the link */
+.cards-circular > ul > li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Background image — absolute fill */
 .cards-circular .cards-circular-card-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 12px;
+  position: absolute;
+  inset: 0;
 }
 
 .cards-circular .cards-circular-card-image p {
@@ -39,8 +38,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  border-radius: 0;
   transition: transform 0.3s;
 }
 
@@ -48,48 +46,82 @@
   transform: scale(1.05);
 }
 
-/* Text body */
+/* Icon overlay — positioned above gradient */
+.cards-circular .cards-circular-card-icon {
+  position: absolute;
+  bottom: 48px;
+  left: 20px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+}
+
+.cards-circular .cards-circular-card-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Text overlay at bottom with gradient */
 .cards-circular .cards-circular-card-body {
-  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 20px 16px;
+  background: linear-gradient(to top, rgb(0 0 0 / 55%) 0%, rgb(0 0 0 / 20%) 60%, transparent 100%);
+  z-index: 1;
 }
 
 .cards-circular .cards-circular-card-body h3 {
+  color: white;
+  font-family: var(--heading-font-family);
   font-size: 16px;
-  font-weight: 600;
-  color: var(--text-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   margin: 0;
-  font-family: var(--body-font-family);
-  text-transform: none;
 }
 
-.cards-circular .cards-circular-card-body a {
-  color: var(--text-color);
-  text-decoration: none;
+/* Hide the duplicate link text below the heading */
+.cards-circular .cards-circular-card-body p {
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
 }
 
 .cards-circular .cards-circular-card-body a.button {
+  position: absolute;
+  inset: 0;
   background: none;
-  color: var(--text-color);
+  color: transparent;
   padding: 0;
   margin: 0;
   border: none;
-  font-size: 16px;
-  font-weight: 600;
-  white-space: normal;
+  border-radius: 0;
+  font-size: 0;
 }
 
-.cards-circular .cards-circular-card-body p {
-  margin: 0;
-  font-size: 14px;
-}
-
-@media (width >= 600px) {
-  .cards-circular > ul > li {
-    width: 160px;
+/* Responsive — 2 columns on mobile */
+@media (width < 600px) {
+  .cards-circular > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
-  .cards-circular .cards-circular-card-image {
-    width: 140px;
-    height: 140px;
+  .cards-circular .cards-circular-card-body h3 {
+    font-size: 14px;
+  }
+
+  .cards-circular .cards-circular-card-icon {
+    bottom: 40px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .cards-circular .cards-circular-card-icon img {
+    width: 28px;
+    height: 28px;
   }
 }
