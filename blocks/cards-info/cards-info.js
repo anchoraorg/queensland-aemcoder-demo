@@ -1,7 +1,30 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
+/**
+ * Convert links whose href looks like an image URL into <img> elements.
+ * AEM content delivery sometimes converts external image URLs to <a> tags.
+ */
+function convertImageLinks(container) {
+  container.querySelectorAll('a').forEach((a) => {
+    const href = a.getAttribute('href') || '';
+    if (/\.(png|jpg|jpeg|gif|svg|webp)/i.test(href) || /scene7\.com/i.test(href)) {
+      const img = document.createElement('img');
+      img.src = href;
+      img.alt = '';
+      img.loading = 'lazy';
+      const p = a.closest('p') || a.parentElement;
+      if (p) {
+        p.replaceChild(img, a);
+      }
+    }
+  });
+}
+
 export default function decorate(block) {
+  // Fix image links before processing
+  convertImageLinks(block);
+
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
