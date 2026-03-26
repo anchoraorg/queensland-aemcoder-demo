@@ -2,8 +2,8 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--queensland-aemcoder-demo--anchoraorg.aem.page/
-- Live: https://main--queensland-aemcoder-demo--anchoraorg.aem.live/
+- Preview: https://main--queensland-aemcoder-demo-v2--anchoraorg.aem.page/
+- Live: https://main--queensland-aemcoder-demo-v2--anchoraorg.aem.live/
 
 ## Documentation
 
