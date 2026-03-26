@@ -57,21 +57,19 @@
   line-height: 1.2;
 }
 
-/* First paragraph after h6 = main description (bold) */
-.cards-info .cards-info-card-body p:first-of-type {
-  margin: 0 0 2px;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-color);
-  line-height: 1.2;
-}
-
-/* Subsequent paragraphs = date range, temp details */
+/* Paragraphs = date range, temp details */
 .cards-info .cards-info-card-body p {
   margin: 2px 0;
   font-size: 16px;
   color: var(--text-color);
   line-height: 1.4;
+}
+
+/* First paragraph after h6 = main description (bold) */
+.cards-info .cards-info-card-body p:first-of-type {
+  margin: 0 0 2px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 /* Temperature row — inline Min 20° Max 26° */

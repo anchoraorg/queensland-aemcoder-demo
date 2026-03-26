@@ -42,10 +42,6 @@
   transition: transform 0.3s;
 }
 
-.cards-circular > ul > li:hover .cards-circular-card-image img {
-  transform: scale(1.05);
-}
-
 /* Icon overlay — positioned above gradient */
 .cards-circular .cards-circular-card-icon {
   position: absolute;
@@ -61,6 +57,10 @@
   height: 40px;
   object-fit: contain;
   filter: brightness(0) invert(1);
+}
+
+.cards-circular > ul > li:hover .cards-circular-card-image img {
+  transform: scale(1.05);
 }
 
 /* Text overlay at bottom with gradient */
