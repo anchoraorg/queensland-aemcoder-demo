@@ -1,0 +1,22 @@
+{
+  "status": "success",
+  "url": "https://www.queensland.com/au/en/home",
+  "path": "au/en/home",
+  "timestamp": "2026-03-25T21:11:25.331Z",
+  "title": "Welcome to Queensland, Australia",
+  "template": "queensland-homepage",
+  "blocks": [
+    "carousel-hero",
+    "carousel-portrait",
+    "carousel-portrait",
+    "carousel-portrait",
+    "carousel-portrait",
+    "cards-info",
+    "cards-circular",
+    "cards-masonry",
+    "cards-masonry",
+    "columns-cta",
+    "columns-cta",
+    "hero-newsletter"
+  ]
+}

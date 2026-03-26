@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-masonry",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-25T10:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/au/en/home",
+    "originPage": "Queensland homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "masonry-grid",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + icon + title + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["experience category grids", "article masonry layouts", "image gallery grids"],
+    "notSuitableFor": ["uniform card grids", "list layouts", "compact info tiles"]
+  },
+  "usage": {
+    "pagesUsing": ["/au/en/home"],
+    "reuseCount": 2,
+    "lastUsed": "2026-03-25T10:00:00.000Z"
+  }
+}

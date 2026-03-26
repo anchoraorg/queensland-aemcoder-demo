@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-cta",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-25T10:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/au/en/home",
+    "originPage": "Queensland homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "image-text-cta",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "large-image + heading + paragraph + CTA-link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["image + text CTA sections", "video + text CTA sections", "promotional split layouts"],
+    "notSuitableFor": ["multi-column text layouts", "comparison tables", "uniform grid content"]
+  },
+  "usage": {
+    "pagesUsing": ["/au/en/home"],
+    "reuseCount": 2,
+    "lastUsed": "2026-03-25T10:00:00.000Z"
+  }
+}

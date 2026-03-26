@@ -1,9 +1,10 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: rgb(0 0 0 / 60%);
   width: 100%;
   z-index: 2;
   position: fixed;
+  color: white;
 }
 
 header nav {
@@ -28,6 +29,7 @@ header nav[aria-expanded='true'] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
+  background-color: rgb(0 0 0 / 90%);
 }
 
 @media (width >= 900px) {
@@ -42,6 +44,7 @@ header nav[aria-expanded='true'] {
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
+    background-color: transparent;
   }
 }
 
@@ -68,7 +71,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: transparent;
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -138,14 +141,14 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 160px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 145px;
   height: auto;
 }
 
@@ -166,11 +169,15 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -268,12 +275,38 @@ header nav .nav-tools {
   grid-area: tools;
 }
 
-header nav .nav-tools .button {
+header nav .nav-tools .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+header nav .nav-tools p {
   margin: 0;
-  border: none;
-  padding: 0.5em;
-  background: none;
   line-height: 0;
+}
+
+header nav .nav-tools a:any-link {
+  display: block;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Bookmark (heart) icon */
+header nav .nav-tools p:first-child a:any-link {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24.6 22.6'%3E%3Cpath fill='none' stroke='white' stroke-width='1.5' d='M21.2 12l-8.6 8.7c-.2.2-.5.2-.6 0L3.4 12c-1.1-1.1-1.7-2.7-1.7-4.3 0-1.6.6-3.1 1.7-4.3 1.2-1.2 2.7-1.8 4.2-1.8s3 .6 4.2 1.8c.3.3.7.3 1 0 2.3-2.4 6.1-2.4 8.4 0 1.1 1.1 1.7 2.7 1.7 4.3 0 1.7-.6 3.2-1.7 4.3'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Search (magnifying glass) icon */
+header nav .nav-tools p:last-child a:any-link {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.2 20.2'%3E%3Cg fill='none' stroke='white' stroke-width='2' transform='translate(10 10)'%3E%3Ccircle cx='-2' cy='0' r='7'/%3E%3Cpath stroke-linecap='round' d='M3.2 4.2l6 6'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 /* breadcrumbs */

@@ -33,6 +33,10 @@
             {
               "name": "Highlight",
               "value": "highlight"
+            },
+            {
+              "name": "Dark",
+              "value": "dark"
             }
           ]
         }
@@ -46,12 +50,19 @@
         "accordion",
         "button",
         "cards",
+        "cards-info",
+        "cards-circular",
+        "cards-masonry",
         "carousel",
+        "carousel-hero",
+        "carousel-portrait",
         "columns",
+        "columns-cta",
         "embed",
         "fragment",
         "form",
         "hero",
+        "hero-newsletter",
         "image",
         "quote",
         "search",

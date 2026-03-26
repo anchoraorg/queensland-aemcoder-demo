@@ -1,0 +1,31 @@
+{
+  "variantName": "carousel-portrait",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-25T10:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/au/en/home",
+    "originPage": "Queensland homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "card-carousel",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "portrait-image + label + title + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["destination carousels", "event listings", "roadtrip carousels", "category browsing"],
+    "notSuitableFor": ["hero banners", "full-width slides", "text-heavy content"]
+  },
+  "usage": {
+    "pagesUsing": ["/au/en/home"],
+    "reuseCount": 4,
+    "lastUsed": "2026-03-25T10:00:00.000Z"
+  }
+}

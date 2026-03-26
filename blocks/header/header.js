@@ -218,9 +218,18 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
+    navTools.querySelectorAll('.button-container').forEach((buttonContainer) => {
+      buttonContainer.classList.remove('button-container');
+      const btn = buttonContainer.querySelector('.button');
+      if (btn) btn.classList.remove('button');
+    });
     const search = navTools.querySelector('a[href*="search"]');
-    if (search && search.textContent === '') {
+    if (search) {
       search.setAttribute('aria-label', 'Search');
+    }
+    const bookmarks = navTools.querySelector('a[href*="bookmarks"]');
+    if (bookmarks) {
+      bookmarks.setAttribute('aria-label', 'Bookmarks');
     }
   }
 

@@ -1,0 +1,217 @@
+{
+  "templates": [
+    {
+      "name": "queensland-homepage",
+      "urls": [
+        "https://www.queensland.com/au/en/home"
+      ],
+      "description": "Queensland Tourism homepage with hero carousel, seasonal info, category buttons, road trip carousels, image/video CTAs, masonry grids, events, destinations, and newsletter signup",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            "section#hero-banner-slider"
+          ]
+        },
+        {
+          "name": "carousel-portrait",
+          "instances": [
+            "section#--wrapper:nth-of-type(1)",
+            "section#region-map-carousel-container",
+            "section#--wrapper:nth-of-type(2)",
+            "section#---wrapper"
+          ]
+        },
+        {
+          "name": "cards-info",
+          "instances": [
+            "section.sc-bEnJPI"
+          ]
+        },
+        {
+          "name": "cards-circular",
+          "instances": [
+            "#category-image-button-list_1472985754"
+          ]
+        },
+        {
+          "name": "cards-masonry",
+          "instances": [
+            "section#masonry-grid-category-wrapper",
+            "section#masonry-grid-article-wrapper"
+          ]
+        },
+        {
+          "name": "columns-cta",
+          "instances": [
+            "section#image-cta_391757186",
+            "section#image-cta_1758896933"
+          ]
+        },
+        {
+          "name": "hero-newsletter",
+          "instances": [
+            "section#-"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-2-hero-carousel",
+          "name": "Hero Banner Carousel",
+          "selector": "section#hero-banner-slider",
+          "style": "dark",
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": [
+            "div.sc-dNFkOE h2",
+            "div.sc-dNFkOE p"
+          ]
+        },
+        {
+          "id": "section-3-whats-on",
+          "name": "Whats On in Queensland",
+          "selector": [
+            "#editorial-description-wrapper:has(h2)",
+            "section.sc-bEnJPI"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-info"
+          ],
+          "defaultContent": [
+            "#editorial-description-wrapper h2"
+          ]
+        },
+        {
+          "id": "section-4-category-buttons",
+          "name": "Category Image Buttons",
+          "selector": "#category-image-button-list_1472985754",
+          "style": null,
+          "blocks": [
+            "cards-circular"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5-roadtrips",
+          "name": "Roadtrips Carousel",
+          "selector": [
+            "section[id='--wrapper']"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-portrait"
+          ],
+          "defaultContent": [
+            "#editorial-description-wrapper h2"
+          ]
+        },
+        {
+          "id": "section-6-outback-cta",
+          "name": "Outback Queensland CTA",
+          "selector": "section#image-cta_391757186",
+          "style": null,
+          "blocks": [
+            "columns-cta"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7-video-cta",
+          "name": "Holiday Feeling Video CTA",
+          "selector": "section#image-cta_1758896933",
+          "style": null,
+          "blocks": [
+            "columns-cta"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8-map-destinations",
+          "name": "Let Us Show You Around",
+          "selector": [
+            "#editorial-description-wrapper:has(h2)",
+            "section#region-map-carousel-container"
+          ],
+          "style": "dark",
+          "blocks": [
+            "carousel-portrait"
+          ],
+          "defaultContent": [
+            "#editorial-description-wrapper h2"
+          ]
+        },
+        {
+          "id": "section-9-category-masonry",
+          "name": "What Holiday Feeling Are You",
+          "selector": [
+            "#editorial-description-wrapper:has(h2)",
+            "section#masonry-grid-category-wrapper"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-masonry"
+          ],
+          "defaultContent": [
+            "#editorial-description-wrapper h2"
+          ]
+        },
+        {
+          "id": "section-10-events",
+          "name": "Be Our Plus One Events",
+          "selector": [
+            "section[id='--wrapper']"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-portrait"
+          ],
+          "defaultContent": [
+            "#editorial-description-wrapper h2"
+          ]
+        },
+        {
+          "id": "section-11-articles-masonry",
+          "name": "Unlock More Queensland Magic",
+          "selector": [
+            "#editorial-description-wrapper:has(h2)",
+            "section#masonry-grid-article-wrapper"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-masonry"
+          ],
+          "defaultContent": [
+            "#editorial-description-wrapper h2"
+          ]
+        },
+        {
+          "id": "section-12-destinations",
+          "name": "Explore Our Destinations",
+          "selector": [
+            "section[id='---wrapper']"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-portrait"
+          ],
+          "defaultContent": [
+            "#editorial-description-wrapper h2"
+          ]
+        },
+        {
+          "id": "section-13-newsletter",
+          "name": "Newsletter Signup",
+          "selector": "section[id='-']",
+          "style": "dark",
+          "blocks": [
+            "hero-newsletter"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

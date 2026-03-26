@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-newsletter",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-25T10:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/au/en/home",
+    "originPage": "Queensland homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "newsletter-signup",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background-image + icon + heading + paragraph + CTA-button",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["newsletter signup banners", "email subscription CTAs", "promotional signup sections"],
+    "notSuitableFor": ["page hero banners", "product features", "content-heavy sections"]
+  },
+  "usage": {
+    "pagesUsing": ["/au/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-25T10:00:00.000Z"
+  }
+}

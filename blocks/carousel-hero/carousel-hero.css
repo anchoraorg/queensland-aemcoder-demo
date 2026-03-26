@@ -1,0 +1,379 @@
+/* Carousel Hero – Queensland Design System styling */
+
+/* Full-bleed wrapper override */
+.carousel-hero-container .carousel-hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Pull hero section under the fixed header */
+main > .section.carousel-hero-container {
+  margin-top: calc(-1 * var(--nav-height));
+  margin-bottom: 0;
+}
+
+/* Slides container */
+.carousel-hero .carousel-hero-slides-container {
+  position: relative;
+}
+
+/* Reset lists */
+.carousel-hero .carousel-hero-slides,
+.carousel-hero .carousel-hero-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Horizontal scroll track */
+.carousel-hero .carousel-hero-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+/* Hide scrollbar */
+.carousel-hero .carousel-hero-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual slide */
+.carousel-hero .carousel-hero-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+}
+
+/* Background image – absolute fill (supports both <picture> and <p><img>) */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image picture,
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image p {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Content overlay – transparent, centered */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-content {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+}
+
+/* Heading */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-content h1 {
+  color: white;
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  text-shadow: 0 1px 4px rgb(0 0 0 / 60%);
+}
+
+/* Body text */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-content p {
+  color: white;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 50%);
+  margin: 0 0 24px;
+}
+
+/* CTA links (teal buttons) */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-content a {
+  display: inline-block;
+  background-color: var(--link-color, #00a5a4);
+  color: white;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+  font-family: var(--heading-font-family);
+  letter-spacing: 1.2px;
+}
+
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-content a:hover,
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-content a:focus-visible {
+  background-color: var(--link-hover-color, #00817d);
+}
+
+/* Hero action buttons (play/pause + bookmark) */
+.carousel-hero .carousel-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.carousel-hero .carousel-hero-actions button {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.carousel-hero .carousel-hero-actions button:hover {
+  opacity: 0.8;
+}
+
+/* Play/Pause button - translucent circle with border */
+.carousel-hero .carousel-hero-actions .carousel-hero-play {
+  background: rgb(255 255 255 / 15%);
+  border: 2px solid rgb(255 255 255 / 40%);
+  position: relative;
+}
+
+/* Pause icon (two bars) */
+.carousel-hero .carousel-hero-actions .carousel-hero-play::before,
+.carousel-hero .carousel-hero-actions .carousel-hero-play::after {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 14px;
+  background: rgb(255 255 255 / 85%);
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-hero .carousel-hero-actions .carousel-hero-play::before {
+  left: 12px;
+}
+
+.carousel-hero .carousel-hero-actions .carousel-hero-play::after {
+  right: 12px;
+}
+
+/* Play icon state (triangle) - applied via JS */
+.carousel-hero .carousel-hero-actions .carousel-hero-play.paused::before {
+  left: 15px;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-style: solid;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent rgb(255 255 255 / 85%);
+  border-radius: 0;
+}
+
+.carousel-hero .carousel-hero-actions .carousel-hero-play.paused::after {
+  display: none;
+}
+
+/* Bookmark/Heart button - teal filled circle */
+.carousel-hero .carousel-hero-actions .carousel-hero-bookmark {
+  background: var(--link-color, #00a5a4);
+}
+
+.carousel-hero .carousel-hero-actions .carousel-hero-bookmark::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24.6 22.6'%3E%3Cpath fill='white' d='M21.2 12l-8.6 8.7c-.2.2-.5.2-.6 0L3.4 12c-1.1-1.1-1.7-2.7-1.7-4.3 0-1.6.6-3.1 1.7-4.3 1.2-1.2 2.7-1.8 4.2-1.8s3 .6 4.2 1.8c.3.3.7.3 1 0 2.3-2.4 6.1-2.4 8.4 0 1.1 1.1 1.7 2.7 1.7 4.3 0 1.7-.6 3.2-1.7 4.3'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Indicators – absolute bottom-center, white dots */
+.carousel-hero .carousel-hero-slide-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  line-height: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-hero .carousel-hero-slide-indicator button {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 50%);
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button:disabled,
+.carousel-hero .carousel-hero-slide-indicator button:hover,
+.carousel-hero .carousel-hero-slide-indicator button:focus-visible {
+  background-color: rgb(255 255 255 / 100%);
+}
+
+/* Navigation buttons – white semi-transparent circles */
+.carousel-hero .carousel-hero-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-hero .carousel-hero-navigation-buttons button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 25%);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.carousel-hero .carousel-hero-navigation-buttons button:hover,
+.carousel-hero .carousel-hero-navigation-buttons button:focus-visible {
+  background-color: rgb(255 255 255 / 50%);
+}
+
+/* Arrow chevrons – white borders */
+.carousel-hero .carousel-hero-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid white;
+  border-bottom: 0;
+  border-left: 0;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-hero .carousel-hero-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* Discover section below hero */
+.carousel-hero .carousel-hero-discover {
+  background: white;
+  text-align: center;
+  padding: 48px 24px 40px;
+  max-width: 800px;
+  margin: -48px auto 0;
+  position: relative;
+  z-index: 3;
+  border-radius: 24px 24px 0 0;
+}
+
+.carousel-hero .carousel-hero-discover h2 {
+  color: #c19a3e;
+  font-family: var(--heading-font-family);
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 24px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-hero .carousel-hero-discover p {
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  line-height: 1.7;
+  margin: 0 0 16px;
+  text-shadow: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-hero .carousel-hero-discover p a {
+  color: var(--link-color);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-hero .carousel-hero-discover p a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Desktop (600px+) ---- */
+@media (width >= 600px) {
+  .carousel-hero .carousel-hero-slide {
+    min-height: 600px;
+  }
+
+  .carousel-hero .carousel-hero-slide .carousel-hero-slide-content h1 {
+    font-size: var(--heading-font-size-xxl, 48px);
+  }
+
+  .carousel-hero .carousel-hero-slide .carousel-hero-slide-content {
+    padding: 48px 32px;
+  }
+
+  .carousel-hero .carousel-hero-navigation-buttons {
+    left: 24px;
+    right: 24px;
+  }
+
+  .carousel-hero .carousel-hero-navigation-buttons button {
+    width: 52px;
+    height: 52px;
+  }
+
+  .carousel-hero .carousel-hero-slide-indicators {
+    bottom: 32px;
+    gap: 10px;
+  }
+
+  .carousel-hero .carousel-hero-actions {
+    bottom: 48px;
+  }
+
+  .carousel-hero .carousel-hero-discover {
+    padding: 56px 48px 48px;
+    max-width: 900px;
+    margin-top: -60px;
+  }
+}

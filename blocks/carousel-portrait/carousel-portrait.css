@@ -1,0 +1,180 @@
+/* Carousel Portrait — Queensland-styled horizontal scrolling portrait cards */
+
+.carousel-portrait-container .carousel-portrait-wrapper {
+  max-width: unset;
+  padding: 0 24px;
+}
+
+.carousel-portrait .carousel-portrait-slides-container {
+  position: relative;
+}
+
+.carousel-portrait .carousel-portrait-slides,
+.carousel-portrait .carousel-portrait-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Horizontal scroll track */
+.carousel-portrait .carousel-portrait-slides {
+  display: flex;
+  gap: 16px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: auto hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel-portrait .carousel-portrait-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual slide / card */
+.carousel-portrait .carousel-portrait-slide {
+  flex: 0 0 250px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: var(--section-dark-bg, #333f48);
+}
+
+/* Portrait card image container */
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-image {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* When slide has an image link in content, make it a portrait card with image background */
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-image:empty {
+  display: none;
+}
+
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-image picture,
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-image p {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card content */
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* When slide-image is empty, content becomes a full card with image */
+.carousel-portrait .carousel-portrait-slide:has(.carousel-portrait-slide-image:empty) {
+  aspect-ratio: 270 / 420;
+}
+
+.carousel-portrait .carousel-portrait-slide:has(.carousel-portrait-slide-image:empty) .carousel-portrait-slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 16px;
+  background: none;
+  color: white;
+}
+
+/* Description text in destination slides */
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: rgb(255 255 255 / 80%);
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Image link inside content (acts as card background) */
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content p:has(a img) {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  z-index: 0;
+}
+
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content p:has(a img)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, rgb(0 0 0 / 60%));
+  z-index: 1;
+}
+
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content a:has(img) {
+  display: block;
+  height: 100%;
+}
+
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content p:has(a img) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Heading */
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content h5,
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content h1 {
+  font-size: 18px;
+  margin: 4px 0;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+/* CTA link for portrait cards */
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content p:has(a:not(:has(img))) {
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content p:has(a:not(:has(img))) a {
+  color: white;
+  font-size: 14px;
+}
+
+/* Label paragraph — small uppercase category label */
+.carousel-portrait .carousel-portrait-slide .carousel-portrait-slide-content p:first-of-type {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--link-color);
+  letter-spacing: 1px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide navigation buttons — scroll handles navigation */
+.carousel-portrait .carousel-portrait-navigation-buttons {
+  display: none;
+}
+
+/* Hide indicators */
+.carousel-portrait .carousel-portrait-slide-indicators {
+  display: none;
+}
+
+/* Desktop breakpoint */
+@media (width >= 600px) {
+  .carousel-portrait .carousel-portrait-slide {
+    flex: 0 0 270px;
+  }
+}

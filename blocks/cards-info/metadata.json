@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-info",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-25T10:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.queensland.com/au/en/home",
+    "originPage": "Queensland homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "info-tiles",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + label + description + date-range",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["seasonal info panels", "weather tiles", "quick-fact displays", "status indicators"],
+    "notSuitableFor": ["product cards", "article grids", "image galleries"]
+  },
+  "usage": {
+    "pagesUsing": ["/au/en/home"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-25T10:00:00.000Z"
+  }
+}

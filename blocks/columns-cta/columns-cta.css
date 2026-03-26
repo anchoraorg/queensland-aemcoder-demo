@@ -1,0 +1,85 @@
+/* columns-cta — Queensland-styled two-column CTA layout */
+
+.columns-cta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
+}
+
+.columns-cta img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+.columns-cta > div > div {
+  order: 1;
+  padding: 32px 24px;
+}
+
+.columns-cta > div > div:first-child {
+  order: 0;
+  padding: 0;
+}
+
+.columns-cta > div > div:first-child img {
+  display: block;
+}
+
+/* Text column typography */
+.columns-cta > div > div h2 {
+  font-size: var(--heading-font-size-xl);
+  color: var(--heading-color);
+  margin: 0 0 16px;
+}
+
+.columns-cta > div > div h1 {
+  font-size: var(--heading-font-size-xxl);
+  letter-spacing: 5.6px;
+}
+
+.columns-cta > div > div p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 16px;
+}
+
+/* CTA button */
+.columns-cta > div > div a {
+  display: inline-block;
+  background-color: var(--link-color);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.columns-cta > div > div a:hover {
+  background-color: var(--link-hover-color);
+}
+
+/* Desktop layout (900px and above) */
+@media (width >= 900px) {
+  .columns-cta > div {
+    flex-direction: row;
+  }
+
+  .columns-cta > div > div {
+    flex: 1;
+    order: unset;
+    padding: 48px 40px;
+  }
+
+  .columns-cta > div > div:first-child {
+    padding: 0;
+  }
+
+  /* Alternate layout: every other columns-cta reverses the column order */
+  .columns-cta:nth-child(even) > div {
+    flex-direction: row-reverse;
+  }
+}

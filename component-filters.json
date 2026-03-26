@@ -11,12 +11,19 @@
       "accordion",
       "button",
       "cards",
+      "cards-info",
+      "cards-circular",
+      "cards-masonry",
       "carousel",
+      "carousel-hero",
+      "carousel-portrait",
       "columns",
+      "columns-cta",
       "embed",
       "fragment",
       "form",
       "hero",
+      "hero-newsletter",
       "image",
       "quote",
       "search",
@@ -34,9 +41,39 @@
     ]
   },
   {
+    "id": "cards-circular",
+    "components": [
+      "cards-circular-item"
+    ]
+  },
+  {
+    "id": "cards-info",
+    "components": [
+      "cards-info-item"
+    ]
+  },
+  {
+    "id": "cards-masonry",
+    "components": [
+      "cards-masonry-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "carousel-hero",
+    "components": [
+      "carousel-hero-item"
+    ]
+  },
+  {
+    "id": "carousel-portrait",
+    "components": [
+      "carousel-portrait-item"
     ]
   },
   {
