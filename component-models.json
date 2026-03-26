@@ -324,20 +324,20 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "media_image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
+        "name": "media_imageAlt",
         "label": "Image Alt",
         "value": ""
       },
       {
         "component": "richtext",
-        "name": "text",
+        "name": "content_text",
         "value": "",
         "label": "Text",
         "valueType": "string"
@@ -420,20 +420,20 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "media_image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
+        "name": "media_imageAlt",
         "label": "Image Alt",
         "value": ""
       },
       {
         "component": "richtext",
-        "name": "text",
+        "name": "content_text",
         "value": "",
         "label": "Text",
         "valueType": "string"
@@ -446,20 +446,20 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "media_image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
+        "name": "media_imageAlt",
         "label": "Alt",
         "value": ""
       },
       {
         "component": "richtext",
-        "name": "text",
+        "name": "content_text",
         "value": "",
         "label": "Text",
         "valueType": "string"
